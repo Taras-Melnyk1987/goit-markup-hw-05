@@ -116,6 +116,10 @@ body {
     width: 200px;
     height: 50px;
     border-radius: 4px;
+    border: 0 solid transparent;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /*ховер и фокус*/
 .link:hover,
@@ -185,6 +189,8 @@ body {
     line-height: 1.63;
     letter-spacing: 0.03em;
     cursor: pointer;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);*/
 }
 /*ховер и фокус button-portfolio*/
 .button-portfolio:hover,
@@ -199,8 +205,8 @@ body {
     line-height: 2;
     letter-spacing: 0.06em;
     text-align: left;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 0px;
+    padding-right: 0px;
     margin-bottom: 4px;
 }
 .portfolio-web{
@@ -212,8 +218,8 @@ body {
     letter-spacing: 0.03em;
     color: #757575;
 
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 0px;
+    padding-right: 0px;
     margin: 0px;
 }
 .portgolio-description{
@@ -251,22 +257,45 @@ header{
 .header{
     display: flex;
     align-items: center;
-    padding: 24px 15px 25px;
+    padding: 0px 15px 0px;
     margin-left: auto;
     margin-right: auto;
 }
 .header-central{
     align-items: center;
 }
+
+
 .logo-box{
     display: block;
     margin-right: 85px;
 }
 .nav-link{
     display: block;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-li .acteve{
     color: #2196F3;
+}
+
+.nav-li{
+    display: flex;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+.nav-li{
+    position: relative;
+}
+
+.nav-li .acteve::after {
+    position: absolute;
+    bottom: -1px;
+    display: block;
+    content: ' ';
+    border-radius: 2px;
+    width: 100%;
+    height: 4px;
+    background:  #2196F3;
 }
 .nav-li:not(:last-child){
     margin-right: 50px;
@@ -277,6 +306,7 @@ header{
 .nav-info{
     display: inline-flex;
     margin-right: 30px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-info::before{
     content: "";
@@ -289,6 +319,7 @@ header{
 .nav-tel{
     /*display: inline-flex;*/
     display: flex;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-tel::before{
     content: "";
@@ -356,15 +387,27 @@ header{
     height: 294px;
     padding: 0px;
     margin: 0px;
+    position: relative;
 }
 .work-boxs:not(:last-child){
     margin-right: 30px;
 }
-.figure{
-    margin: 0px;
-}
 .figcaption{
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.143;
     text-align: center;
+    text-transform: uppercase;
+
+    width: 100%;
+    height: 70px;
+    color: #ffffff;
+    background: rgba(47, 48, 58, 0.8);
 }
 
 /*наша жизнь*/
@@ -452,11 +495,12 @@ header{
     border-radius: 4px;
     color: #afb1b8;
 
-    /*transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);*/
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-icon {
     fill: currentColor;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover,
@@ -497,6 +541,7 @@ header{
 .footer-button{
     width: 600px;
     padding: 0px 15px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-contact{
     margin: 0px;
@@ -504,6 +549,12 @@ header{
 }
 
 /*портфолио*/
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 .portfolio-magabox{
     padding: 94px 0px;
     margin-left: auto;
@@ -529,9 +580,46 @@ header{
     margin-right: 30px;
     margin-bottom: 30px;
     border: 1px solid #EEEEEE;
+
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio-version:hover{
+.portfolio-version:hover,
+.portfolio-version:focus{
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.projects-thumb {
+    position: relative;
+    overflow: hidden;
+}
+.portfolio-version .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+
+    padding: 63px 24px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.556;
+    color: #ffffff;
+    background: rgba(33, 150, 243, 0.9);
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-version:hover .overlay,
+.portfolio-version:focus .overlay {
+    transform: translateY(0);
+}
+.portfolio-projects-desc {
+    padding: 20px 24px;
+    /*background-color: var(--white-color);*/
+    border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    border-left: 1px solid #eeeeee;
 }
 .portfolio-version:nth-child(3n){
     margin-right: 0px;
@@ -551,6 +639,7 @@ header{
     background-color: #ffffff;
     fill: #AFB1B8;
     border-radius: 50%;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-snipp:hover,
 .icon-snipp:focus{
